@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title id="title">粒子基础</title>
+  <style>
+  #canvas,#container,html,body {
+     padding: 0;
+     margin: 0;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     text-align: center;
+      }
+ </style>
+</head>
+</body>
+<div id="container"></div>
+<script type="text/javascript" src="./particle.js"></script>
+<script>
+
+//创建画布，每个案例都差不多
+var container = document.getElementById('container');//取得放置canvas画板的容器
+var canvas = document.createElement('canvas');//创建canvas画布
+var width = canvas.width = container.offsetWidth;//把容器的宽度赋予画布
+var height = canvas.height = container.offsetHeight;//把容器的高度赋予画布
+container.appendChild(canvas);//把画布放入容器
+var ctx = canvas.getContext('2d');
+
+var particles = [];
+function init(){
+  for(var i = 0; i< 200; i++){
+    var x = width * Math.random();
+    var y = height * Math.random();
+    var particle = new Particle(ctx, x, y);
+    particles.push(particle);
+  }
+}
+function loop(){
+  // ctx.clearRect(0,0,width,height);
+  for(var i = 0; i< 200; i++){
+    var particle = particles[i];
+    particle.update();
+    particle.render();
+  }
+  window.requestAnimationFrame(loop);
+}
+
+init();
+loop();
+
+</script>
+</body>
+</html>
