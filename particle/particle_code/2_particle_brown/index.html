@@ -30,19 +30,19 @@ var ctx = canvas.getContext('2d');
 
 var particles = [];
 function init(){
-  for(var i = 0; i< 200; i++){
-    var x = width * Math.random();
-    var y = height * Math.random();
-    var particle = new Particle(ctx, x, y);
-    particles.push(particle);
+  for(var i = 0; i< 800; i++){
+    var x = width * Math.random();//随机的x方向速度
+    var y = height * Math.random();//随机的y方向速度
+    var particle = new Particle(ctx, x, y);//创建粒子对象
+    particles.push(particle);//将粒子加入列表
   }
 }
 function loop(){
-  // ctx.clearRect(0,0,width,height);
-  for(var i = 0; i< 200; i++){
+  ctx.clearRect(0,0,width,height);//清除上一次的绘图
+  for(var i = 0; i< 800; i++){
     var particle = particles[i];
-    particle.update();
-    particle.render();
+    particle.update();//更新粒子位置
+    particle.render();//更新粒子位置
   }
   window.requestAnimationFrame(loop);
 }
