@@ -1,0 +1,86 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="house_lianjia_details">
+<Table>
+<Column ss:Width="64"/>
+<Column ss:Width="192"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">price_per_square</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">house_direction</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">c</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">178108</Data></Cell>
+<Cell><Data ss:Type="String">三层</Data></Cell>
+<Cell><Data ss:Type="String">2</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">50812.3672182821</Data></Cell>
+<Cell><Data ss:Type="String">西南</Data></Cell>
+<Cell><Data ss:Type="String">2538</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">50465.1926952141</Data></Cell>
+<Cell><Data ss:Type="String">东西</Data></Cell>
+<Cell><Data ss:Type="String">794</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">47931.1098820059</Data></Cell>
+<Cell><Data ss:Type="String">东南</Data></Cell>
+<Cell><Data ss:Type="String">2712</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">45972.7823529412</Data></Cell>
+<Cell><Data ss:Type="String">西北</Data></Cell>
+<Cell><Data ss:Type="String">850</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">45865.5761024182</Data></Cell>
+<Cell><Data ss:Type="String">东北</Data></Cell>
+<Cell><Data ss:Type="String">703</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">44999.8129205922</Data></Cell>
+<Cell><Data ss:Type="String">西</Data></Cell>
+<Cell><Data ss:Type="String">1486</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">44240.7038363171</Data></Cell>
+<Cell><Data ss:Type="String">东</Data></Cell>
+<Cell><Data ss:Type="String">1955</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">41242.584861307</Data></Cell>
+<Cell><Data ss:Type="String">北</Data></Cell>
+<Cell><Data ss:Type="String">4254</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">39781.9019750646</Data></Cell>
+<Cell><Data ss:Type="String">南</Data></Cell>
+<Cell><Data ss:Type="String">57669</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">39773.2080151648</Data></Cell>
+<Cell><Data ss:Type="String">南北</Data></Cell>
+<Cell><Data ss:Type="String">55919</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">32472.5259724121</Data></Cell>
+<Cell><Data ss:Type="String">暂无数据</Data></Cell>
+<Cell><Data ss:Type="String">16094</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

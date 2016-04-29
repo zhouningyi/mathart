@@ -1,0 +1,208 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="house_lianjia_details">
+<Table>
+<Column ss:Width="64"/>
+<Column ss:Width="192"/>
+<Column ss:Width="128"/>
+<Column ss:Width="192"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">price_per_square</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">decoration</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">c</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">house_type</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">135950.545454545</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">22</Data></Cell>
+<Cell><Data ss:Type="String">花园洋房</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">132912.315789474</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">19</Data></Cell>
+<Cell><Data ss:Type="String">花园洋房</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">126344.233333333</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">60</Data></Cell>
+<Cell><Data ss:Type="String">花园洋房</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">123113.549019608</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">51</Data></Cell>
+<Cell><Data ss:Type="String">新式里弄</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">113885.129770992</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">131</Data></Cell>
+<Cell><Data ss:Type="String">花园洋房</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">108974.397727273</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">264</Data></Cell>
+<Cell><Data ss:Type="String">新式里弄</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">107222.828571429</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">70</Data></Cell>
+<Cell><Data ss:Type="String">花园洋房</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">105145.290322581</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">186</Data></Cell>
+<Cell><Data ss:Type="String">新式里弄</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">101074.418867925</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">265</Data></Cell>
+<Cell><Data ss:Type="String">新式里弄</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">93636</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">14</Data></Cell>
+<Cell><Data ss:Type="String">老公寓</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">92833.4242424242</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">33</Data></Cell>
+<Cell><Data ss:Type="String">新式里弄</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">84511.7671232877</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">73</Data></Cell>
+<Cell><Data ss:Type="String">老公寓</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">81371.2</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">40</Data></Cell>
+<Cell><Data ss:Type="String">老公寓</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">76415.7234042553</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">47</Data></Cell>
+<Cell><Data ss:Type="String">老公寓</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">66877.3333333333</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">6</Data></Cell>
+<Cell><Data ss:Type="String">老公寓</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">60454.8945191313</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">3868</Data></Cell>
+<Cell><Data ss:Type="String">普通住宅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">59292.122929381</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">1147</Data></Cell>
+<Cell><Data ss:Type="String">别墅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">48847.2302631579</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">1976</Data></Cell>
+<Cell><Data ss:Type="String">别墅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">46652.3728813559</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">236</Data></Cell>
+<Cell><Data ss:Type="String">别墅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">42639.236837333</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">33086</Data></Cell>
+<Cell><Data ss:Type="String">普通住宅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">41874.9112903226</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">248</Data></Cell>
+<Cell><Data ss:Type="String">商住两用</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">40164.5807365439</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">353</Data></Cell>
+<Cell><Data ss:Type="String">别墅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">39311.3679867987</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">3030</Data></Cell>
+<Cell><Data ss:Type="String">别墅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">38956.8491982507</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">13720</Data></Cell>
+<Cell><Data ss:Type="String">普通住宅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">36541.7633866825</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">10122</Data></Cell>
+<Cell><Data ss:Type="String">普通住宅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">30057.6235489221</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">603</Data></Cell>
+<Cell><Data ss:Type="String">商住两用</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">27483.3733031674</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">442</Data></Cell>
+<Cell><Data ss:Type="String">商住两用</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">27396.3241555492</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">3523</Data></Cell>
+<Cell><Data ss:Type="String">商住两用</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">26722.6057397848</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">11429</Data></Cell>
+<Cell><Data ss:Type="String">普通住宅</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">20375.9912536443</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">686</Data></Cell>
+<Cell><Data ss:Type="String">商住两用</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

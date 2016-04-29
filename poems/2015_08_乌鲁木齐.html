@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>2015_08_乌鲁木齐</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h2>2015-08 写在乌鲁木齐的大街上</h2>
+<p>睡9个小时<br>
+以4km/h的速度<br>
+走在陌生的街上<br></p>
+<p>老板<br>
+四个烤串<br>
+一瓶可乐<br></p>
+<p>再来四串<br>
+再来一瓶<br>
+记得加冰<br></p>
+<p>司机你好<br>
+30块钱20公里<br>
+uber滴滴<br>
+全部 bye bye<br></p>
+<p>这就是<br>
+今天下午<br>
+真爽 <br>
+想起曾经觉得<br>
+最好的日子<br>
+就是带着可乐花生<br>
+在西藏的山坡上<br>
+随便唱歌<br></p>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = '2015_08_乌鲁木齐';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + '2015_08_乌鲁木齐' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/poems/2015_08_乌鲁木齐.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

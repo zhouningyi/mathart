@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>mima</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h1>密码漫游记</h1>
+<h2>总览</h2>
+<p>今天下午，乌云漏洞报告平台宣布网易邮箱漏洞过亿数据泄漏，我去，据说有亿级别的用户密码流出…</p>
+<p>现在网易官方还在和乌云互掐，真相估计还要时间，但小编反问，你的密码设计合理吗？</p>
+<!--很少有人会和你交流他是怎么设计密码的，但有了大量数据，我们能通过简单的统计，发现不同人思路的共性。-->
+<p>2011年起有一系列重大网站密码泄露，csdn社区、人人网、多玩网、微博的部分密码数据都被挂到了网上(数据请自行google，本文讨论思路，展示结果，不泄露信息)。</p>
+<p>我们以当时微博的3315156条用户名密码数据，开始分析之旅。</p>
+<h2>工具</h2>
+<p>而我们下载到的文件类似于csv(逗号分隔) 或tsv格式（空格分隔）数据，如：</p>
+<pre><code>mail  password  
+xxxx@yahoo.com.cn   198869  
+yyyy@sina.com   5201985926  
+</code></pre>
+<p>数据很大，需要的查询可能很复杂，纯脚本处理很难胜任，我们需要数据库, 本文就用mongoDB了。</p>
+<p>我们可以在命令行里使用mongoimport命令导入数据，也可以使用脚本（我用node.js）导入，脚本更灵活。导完后，可以直接在命令行（如mac的terminal）查询:</p>
+<pre><code>//密码为1234的同学共2438个
+&gt; db.passwords.count({password:'1234'})
+2438
+</code></pre>
+<p>以上，括号里面的叫查询条件，这在本文中很重要，我们可以在查询条件里插入正则表达式（网上资料大大的），让查询变得更复杂:</p>
+<pre><code>//密码用888结尾的同学共15813个
+&gt; db.passwords.count({password:{$regex:/888$/}})
+15813
+</code></pre>
+<p>最后，有时候我们要统计，比如密码以a、b、c、d…，各有多少，这时我们需要用mapreduce，mapreduce可以处理很多数据，但是在mongo执行mapreduce较复杂，一般在脚本里写好了去执行。</p>
+<p>嘿嘿，工具只是手段，白猫黑猫，能抓老鼠的就是好猫。</p>
+<p>启程！</p>
+<h2>密码top100，都有些啥</h2>
+<p>运行mapreduce，很容易跑出前100的密码， 以下是前二十名:
+<img src="./img/mima/count_small.png" alt="image"></p>
+<p>很容易发现规律，俺将此类密码的主人分五大派系：</p>
+<ul>
+<li>极懒派</li>
+<li>手势派</li>
+<li>规律派</li>
+<li>手机派</li>
+<li>生日派</li>
+<li>情感派</li>
+</ul>
+<h2>极懒派：</h2>
+<p>这3万多同学真是懒的令人发指,也刷新了哥的常识，喝喝…</p>
+<table>
+<thead>
+<tr>
+<th>密码</th>
+<th style="text-align:center">排名</th>
+<th style="text-align:right">重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">27458次</td>
+</tr>
+<tr>
+<td>111111</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">27328次</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">18</td>
+<td style="text-align:right">2781次</td>
+</tr>
+<tr>
+<td>@163.com</td>
+<td style="text-align:center">51</td>
+<td style="text-align:right">1015次</td>
+</tr>
+<tr>
+<td>password</td>
+<td style="text-align:center">70</td>
+<td style="text-align:right">755次</td>
+</tr>
+<tr>
+<td>@qq.com</td>
+<td style="text-align:center">74</td>
+<td style="text-align:right">714次</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>那时候微博竟然能通过一个字的密码。</li>
+<li>password也是老外的高频词，我不知道是不是某些网站输入框里password提示词的误导。</li>
+<li>单字重复型，如 11111，让我们深入发掘下。</li>
+<li>最有意思的是163.com和@qq.com出现的频率，而这1000多用户，密码=用户名后半部分…</li>
+</ol>
+<h5>极懒派.一字重复n次</h5>
+<p>推广一下，统计形如 ‘aa’, ‘11111’, 'ssssssss’这类若干个相同单字的密码总数。
+正则表达式可以让我们很方便地去进行查询:</p>
+<pre><code>//查询所有完全由1构成重复2次以上的密码
+var query = {
+   password:{
+     $regex: '/^1{2,}$/'
+   }
+}
+</code></pre>
+<p>我统计了 1、2、3、4、5、6、7、8、9、0、q、a、z、w、s、d的频率分布，其中用’111111’型的用户最多
+这些密码总计6w多人 占2%。
+<img src="./img/mima/count_char_copy_small.png" alt="image"></p>
+<h5>极懒派.用户名=密码</h5>
+<p>上述统计不包含用户名和密码相同的密码，这部分密码共有多少呢?</p>
+<p>以abcd@qq.com 为例，我们统计这3种模式的数量之和：</p>
+<ul>
+<li><a href="mailto:abcd@qq.com">abcd@qq.com</a></li>
+<li>abcd</li>
+<li>@qq.com 。</li>
+</ul>
+<p>99671个人，有点意外，整整占了3%呢!</p>
+<h2>手势派：</h2>
+<p>密码太长，能在键盘上排成一种形状，记忆成本就大大压缩，在密码排行榜上，和图形有关的密码是哪些？
+123456云云者，勉强算吧，在数字键盘划一字。同理qwerty开头的也是这个原理。</p>
+<table>
+<thead>
+<tr>
+<th>密码</th>
+<th style="text-align:center">排名</th>
+<th style="text-align:right">重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qazwsx</td>
+<td style="text-align:center">50</td>
+<td style="text-align:right">1017次</td>
+</tr>
+<tr>
+<td>qwerty</td>
+<td style="text-align:center">67</td>
+<td style="text-align:right">777次</td>
+</tr>
+<tr>
+<td>123qwe</td>
+<td style="text-align:center">78</td>
+<td style="text-align:right">680次</td>
+</tr>
+<tr>
+<td>asdfgh</td>
+<td style="text-align:center">87</td>
+<td style="text-align:right">549次</td>
+</tr>
+</tbody>
+</table>
+<p>对此，我看到一位老外很牛逼地总结了20种模式:</p>
+<p><img src="./img/mima/keyborard.gif" alt="image"></p>
+<p>这个模式很牛逼，图上是键盘密码。但11年已经有很多人用手机上微博了。有不少这种手机键盘，因此很多密码为啥长也就迎刃而解了。</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:right">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">9</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>密码</th>
+<th style="text-align:center">排名</th>
+<th style="text-align:right">重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>147258</td>
+<td style="text-align:center">29</td>
+<td style="text-align:right">1899次</td>
+</tr>
+<tr>
+<td>147258369</td>
+<td style="text-align:center">40</td>
+<td style="text-align:right">1538次</td>
+</tr>
+<tr>
+<td>159357</td>
+<td style="text-align:center">41</td>
+<td style="text-align:right">1402次</td>
+</tr>
+<tr>
+<td>159753</td>
+<td style="text-align:center">54</td>
+<td style="text-align:right">993次</td>
+</tr>
+</tbody>
+</table>
+<h2>规律派：</h2>
+<p>记住一串数字的规律，我们就可以把一串简单的数字演绎成复杂密码，而你记住规则就好。</p>
+<p>很勉强，123456就是个等差数列
+<code>fn = n</code>
+而 13579是
+<code>fn = 2*n-1</code></p>
+<p>很多人会用叠词 如123123，112233，或叠加后对称 123321
+高分密码有这些:</p>
+<table>
+<thead>
+<tr>
+<th>密码</th>
+<th style="text-align:center">排名</th>
+<th style="text-align:right">重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>123123</td>
+<td style="text-align:center">6</td>
+<td style="text-align:right">14838次</td>
+</tr>
+<tr>
+<td>112233</td>
+<td style="text-align:center">21</td>
+<td style="text-align:right">2536次</td>
+</tr>
+<tr>
+<td>102030</td>
+<td style="text-align:center">100</td>
+<td style="text-align:right">484次</td>
+</tr>
+</tbody>
+</table>
+<p>可以引申下，同样是数列，用了中学知识就不一样啦，假设我们让 <code>fn = n^2</code>, 我们就可以构造一个数列了：</p>
+<p>1 2 3 4 5 6 -&gt; 1 4 9 16 25 36…</p>
+<p>我查询了含有1491625的所有密码，共找到30几个，真是海内存知己（因为曾经我也是这么设计的）</p>
+<p>同理 1 8 27 64 125 的只有3个人，高手啊</p>
+<p>如果你拿12345开根号、取三角函数、取对数，忘记密码，在手机计算机里算一遍（别忘了公式）。</p>
+<p>海内无知己，天涯只有你，你赢了！</p>
+<h2>手机派：</h2>
+<p>使用自己和亲人的生日、电话、手机做密码，已是我对普通密码的印象了，这部分人究竟多不多？</p>
+<p>用手机做密码，一开始我设置了11位的数字的条件，但是有很多错误的结果。好在网上有对手机号码检测的正则表达式，包含了2013年前所有的手机字段:</p>
+<ul>
+<li>移动：139 138 137 136 135 134 147 150 151 152 157 158 159 178 182 183 184 187 188</li>
+<li>联通： 130 131 132 155 156 185 186 145 176</li>
+<li>电信： 133 153 177 180 181 189</li>
+<li>虚拟运营商：170</li>
+</ul>
+<p>因此<a href="http://blog.csdn.net/fengshi_sh/article/details/12085307">大神</a>整理了一个可以查询手机号的正则表达式：</p>
+<pre><code class="language-javascriptjavascript">//对前三位进行排查，排除所有一定不是手机号的密码
+var query = {
+   password:{
+     $regex: '/^0?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}$/'
+   }
+}
+</code></pre>
+<p>亲测有效哦，出来的密码几乎都是手机号， 172418个同学用手机号做密码 占比5%。</p>
+<h2>生日/纪念日派：</h2>
+<p>我们查询所有包含年份的密码，这些年份都以19和20开头，且有4位连续数字， 考虑到5201314(我爱你一生一世)也是高频密码，且密码数据的时间为2011年，此时2013不该出现，所以排除2011年以后的年份，我们得到如下结果:</p>
+<pre><code class="language-javascriptjavascript">//对年份进行筛选
+var query = {
+   password:{
+     $regex: '/(19(\d{2})|200[0-9]|2010|2011)/'
+   }
+}
+</code></pre>
+<p>543559个密码使用了年份，占总量的18%。
+真不是小数字，但数据还是很复杂，有大量年份和字母，符号混合的，也不一定就是年份。那我们缩小范围，如果包含生日的有多少人？</p>
+<p>月份比较复杂，1月1日出生的，也许写11，也许写0101，也有1.1、1-1的。但后者其实比较少，且在在这篇分析<a href="https://program-think.blogspot.com/2011/12/csdn-renren-password-analysis.html">人人和csdn密码的文章</a>里看到YYMMDD型的生日是最多的:</p>
+<table>
+<thead>
+<tr>
+<th>日期格式</th>
+<th style="text-align:center">CSDN (%)</th>
+<th style="text-align:right">RenRen (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YYMMDD</td>
+<td style="text-align:center">0.14</td>
+<td style="text-align:right">3.59</td>
+</tr>
+<tr>
+<td>YYYYMMDD</td>
+<td style="text-align:center">5.92(38万)</td>
+<td style="text-align:right">2.67</td>
+</tr>
+<tr>
+<td>MMDDYYYY</td>
+<td style="text-align:center">0.06</td>
+<td style="text-align:right">0.11</td>
+</tr>
+<tr>
+<td>其他</td>
+<td style="text-align:center">小于0.01</td>
+<td style="text-align:right">小于0.01</td>
+</tr>
+</tbody>
+</table>
+<p>那我们的查询如下</p>
+<pre><code class="language-javascriptjavascript">//对年份进行筛选，月份位和日期位上若是0-9的数字，可以自由选择是否加0
+var query = {
+   password:{
+     $regex: /(19\d{2}|200[0-9]|2010|2011)([1-9]|0[1-9]|11|12)(([0-2][1-9])|30|31)/
+   }
+}
+</code></pre>
+<p>318022个密码符合条件 占总量的10%。</p>
+<p>这批密码还是颇为复杂，因为很多人在字母和其他数字后加入生日的，仅以生日作为密码的人会有多少？</p>
+<pre><code class="language-javascriptjavascript">//对年份进行筛选
+var query = {
+   password:{
+     $regex: /^(19\d{2}|200[0-9]|2010|2011)([1-9]|0[1-9]|11|12)(([0-2][1-9])|30|31)$/
+   }
+}
+</code></pre>
+<p>答案是137697, 4%的人用自己生日做密码，而其中，也有些奇葩的答案，如好几个’19190504’ 我去，这是xx团委的公众号么…</p>
+<h2>情感派：</h2>
+<p>写一句有含义的密码，写什么重复率最高？</p>
+<table>
+<thead>
+<tr>
+<th>密码</th>
+<th style="text-align:center">排名</th>
+<th style="text-align:right">重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5201314</td>
+<td style="text-align:center">5</td>
+<td style="text-align:right">15015次</td>
+</tr>
+<tr>
+<td>1314520</td>
+<td style="text-align:center">10</td>
+<td style="text-align:right">5473次</td>
+</tr>
+<tr>
+<td>7758521</td>
+<td style="text-align:center">12</td>
+<td style="text-align:right">4833次</td>
+</tr>
+<tr>
+<td>woaini</td>
+<td style="text-align:center">20</td>
+<td style="text-align:right">2659次</td>
+</tr>
+<tr>
+<td>iloveyou</td>
+<td style="text-align:center">49</td>
+<td style="text-align:right">1054次</td>
+</tr>
+</tbody>
+</table>
+<h4>情感派.因为爱情</h4>
+<p>现实里压抑的我们难得一说我爱你，不论国内国外，都有很多人对着服务器许愿，说出 wo ai xx，这些我爱你型密码的总数让我非常震惊。</p>
+<p>这份密码数据里，woaini 以2659次重复荣居意义型密码榜首，iloveyou则不到woaini的一半。
+但事实上文字版的都弱爆了，位居第五名的5201314（我爱你一生一世）有15000个人同时使用，还有各种变体…其中第13名最缺爱 7758521（亲亲我吧爱我吧）</p>
+<p>除了我爱你，我还爱谁？
+让我们查询任何含有 woai（我爱）的密码，还是基本都是在各种爱你… 偶尔有woaiwojia woaishui woainima… 有意思的是我爱我家，这中介公司的名字取得真是合理。
+<img src="./img/mima/woai_small.png" alt="image"></p>
+<p>如果我们查询含有 'wo’字的密码，也会发现我最喜欢做的事情就是爱xx… 除了爱你，我还爱谁呢，老公、老婆、妈妈、爸爸…
+woailaopo + laopowoai 的人数有291人 laogongwoai和woailaogong的人数有98人，这些都是少数派密码了。我们试试 我爱妈妈(201)和我爱爸爸(60)的比例，竟然也是3:1。</p>
+<p>出于好奇，我又统计了密码里包含’laopo’的和包含’laogong’的比例:
+老公: 454
+老婆: 1118
+包含老公的密码基本都是形如: ‘zuiailaogong’、 ‘qinaidelaogong’、 ‘pplaogong’,我擦看不下去了，真是一部show恩爱宝典…
+爱老婆的数量还是完胜，可惜，这是一组良莠不齐的密码， 还是有不少形如laopo38、 laoposhizhu choulaopo laopocaolei sblaopo777 的密码…（总数还是不算多）</p>
+<p>相反，骂人的人比例很少，fuck shit cao说的人都不算多。而这其中，也有些有趣的点:</p>
+<p>鲁迅在杂文《论他妈的》中说他妈的是中国的国骂，但是时代变了，也许是受了上古十大神兽草泥马（当年暴走漫画王尼玛还没火吧），nima的频率2714次远高于tama 101次。也完胜 ‘fuck’、 ‘shit’、 'wocao’这些 400-500次之间的词。</p>
+<h2>用什么字做密码最安全</h2>
+<p>我不是黑客，不知破解算法是怎么做的，但只要键入一个字，就让你的密码与众不同，你会怎么敲？
+我们对密码里用到的所有字进行统计，得出下图
+<img src="./img/mima/count_char_small.png" alt="image"></p>
+<p>1是第一名，被300多万用户累计输入300多万次，1是一个很有趣的数字，超过60%的人密码会用到1，而30%的人会以1作为密码开头，
+可以看到’.’ ‘@’ 等特殊字符，在符号里排名很靠前。曾经看到说用’_‘在密码里较为安全，因为比’-‘少，事实上也的确如此，但你何必按shift打_号呢，’,'的比例比前面所有的标点符号都少</p>
+<p>我们可以看到，数据下降非常快速，有规律可循吗？将柱状图的大小全部取对数，那么四大阵营的阶梯形一览无余：
+1-9排在了所有的字母之前，几乎所有的字母排在了大写字母之前
+<img src="./img/mima/count_char1_small.png" alt="image"></p>
+<p>最后，纠正一个数据错误，我们看到 ‘E’ 和 ‘+’ 的比例非常异常，他们理应没有那么多，为什么？</p>
+<pre><code>'5.20131E+13'
+'1.23456E+11'
+</code></pre>
+<p>好，看到这里，你应该觉得很熟悉, 5201314,123456, 都是熟悉的密码，而E+13这种也很熟悉。excel里输入一个长度超过11位的纯数字，excel会自动将数字转化为这个样子的。这份数据应该是被谁用excel打开后又保存了，所以，大写字母最多的应该是 ‘A’，而 '+'的用量也排不到符号类的第二名。</p>
+<h2>你的密码安全吗</h2>
+<p>回到2011年，我在微博上找一个邮箱，然后破解你的密码，哥成功的概率有多大？</p>
+<p>前100名的密码,第一名的密码123456共165882条,占5%。前10名的密码有316085条，占10%，而前100条密码共442555条，占 15%</p>
+<p>累计15%的人能被这100个密码破解。</p>
+<p>用户名和密码匹配(包含之前提到的前缀相同，后缀相同和 后缀+@相同)共99671人。</p>
+<p>累计计18%的用户都会在103次穷举后被破解。</p>
+<p>近100年的生日有365*100个，如果我遍历那么多次，总有一个是对的，这样我可以破解4%的密码。</p>
+<p>累计22%的人已经被破解。</p>
+<p>倘若我知道你的手机号码，5%的人的密码会被破解，累计27%</p>
+<p>如果我知道你的名字(这份数据无法分析你的名字和密码的关系) 这个比例会更高。</p>
+<p>2011年，1/3的人密码是不安全的。</p>
+<p>你觉得你的密码设计的科学吗？</p>
+<p>参考资料：</p>
+<p><a href="http://blog.csdn.net/arthur503/article/details/8513992">ZIPF分布、PARETO分布和幂律分布</a></p>
+<p><a href="https://program-think.blogspot.com/2011/12/csdn-renren-password-analysis.html#head-4">CSDN及人人网的用户密码分析</a></p>
+<p><a href="http://blog.csdn.net/fengshi_sh/article/details/12085307">最新手机号码验证正则表达式</a></p>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = 'mima';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + 'mima' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/spider/mima.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

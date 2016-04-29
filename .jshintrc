@@ -1,0 +1,44 @@
+{
+  "asi": false,
+  "boss": false,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": false,
+  "es5": true,
+  "evil": false,
+  "expr": false,
+  "forin": true,
+  "funcscope": false,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "loopfunc": false,
+  "maxerr": 7,
+  "newcap": true,
+  "node": true,
+  "nonew": true,
+  "plusplus": true,
+  "quotmark": "single",
+  "regexdash": false,
+  "shadow": false,
+  "strict": false,
+  "sub": false,
+  "supernew": false,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "white": true,
+  // 设置 JS 执行环境为浏览器
+  "browser": true,
+
+  // 加载 jQuery 的全局变量（jQuery、$）
+  "jquery": true,
+
+  // 禁止定义之前使用变量，忽略 function 函数声明
+  "latedef": "nofunc",
+
+  "browser": true,
+
+  "loopfunc": true
+}

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>1_map_practice</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h2>实践</h2>
+<h2>api撕逼大战</h2>
+<p>bat（百度、高德、腾讯）都有自己的地图，国外也有很多地图。但商业地图往往不开源，我们容易比较</p>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th style="text-align:center">商业地图</th>
+<th style="text-align:right">开源地图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开源(底层可定制性)</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td>全面</td>
+<td style="text-align:center">更全</td>
+<td style="text-align:right">专注地图绘图</td>
+</tr>
+<tr>
+<td>轻量</td>
+<td style="text-align:center">总体不错</td>
+<td style="text-align:right">更好</td>
+</tr>
+</tbody>
+</table>
+<p>在开源的库里，我们选择了leaflet, 首先leaf只有33k，非常小，摈弃了很多多余的功能，并</p>
+<h2>怎样画点图</h2>
+<p>####最小原型
+甲方: 在地图上画一个点（圆形），代表移动基站。
+序猿: 我考 简单，画个圆，大小40像素。leaflet自带的方法就很方便啊。</p>
+<pre><code class="language-javascriptjavascript">var map = L.map('container', {'center': [22.322527221056657, 114.21292304992676], 'zoom': 13});
+var latlng = [22.322527221056657, 114.21292304992676];
+var radius = 20;
+var circle =L.circleMarker(latlng, radius).addTo(map);
+</code></pre>
+<p>这样，我们画了一个中心位于画面中心的圆，直径40px, 这个大小与地图缩放无关。</p>
+<h4>缩放问题。</h4>
+<p>甲方：哥们，需求不是这样的，这个点是个基站，有一定的辐射范围，1km，你不能放到杭州这么大，缩到全国也那么大吧
+序猿: 我艹，不过也没问题 一行分分钟搞定 L.circleMarker -&gt; L.circle</p>
+<pre><code class="language-javascriptjavascript">var map = L.map('container', {'center': [22.322527221056657, 114.21292304992676], 'zoom': 13});
+var latlng = [22.322527221056657, 114.21292304992676];
+var radius = 1000;//单位:米
+var circle =L.circle(latlng, radius).addTo(map);
+</code></pre>
+<h4>数量不止是一个</h4>
+<p>甲方：哥们， 你别乐着，我有好几多个基站呢，每个辐射圈都不一样的哦。
+序猿: 毛，不早说。不过这有啥。</p>
+<pre><code class="language-javascriptjavascript">var map = L.map('container', {'center': [22.322527221056657, 114.21292304992676], 'zoom': 13});
+var data = [{pos:[30, 120],radius:1000}, {pos:[30.1, 120.1],radius:800}];//省略多余的
+for(var i in data){
+  var d = data[i];
+  L.circle(d.latlng, d.radius).addTo(map);
+}
+</code></pre>
+<h4>数量继续增加</h4>
+<p>甲方：哥们， 你不行，导入数据直接卡死，我们这有10000个基站呢。
+序猿：好吧，这咋办，这circle画到几千个就卡死了，你丫破电脑，逼我换方案么。
+不过，序猿苦苦搜寻，发现一个cluster的库，这个库可以把临近的点聚合到一起显示一个总数。</p>
+<pre><code class="language-javascripthtml">增加一个canvas节点 大小和地图等大，放在地图层上方
+</code></pre>
+<pre><code class="language-javascriptjavascript">var map = L.map('container', {'center': [22.322527221056657, 114.21292304992676], 'zoom': 13});
+var data = [{pos:[30, 120],radius:1000}, {pos:[30.1, 120.1],radius:800}];//省略多余的
+}
+</code></pre>
+<h4>要求真实位置。</h4>
+<p>甲方: 哥们，你这程序看起来是很吊，但我们老板希望显示完全真实的位置，你这cluster，缩放一下，一个点都不知道挪哪里去了，你看看人家google earth，挪到日本，打开地震图层，多牛逼， 几万次地震人家画的好好的，你咋不学学呢。
+序猿: 我考 google earth, 这厮是按照地震的等级分的， 大地震一直显示在地图上，小地震到了缩放很大的时候才显示。所以，一个数据是否要显示 取决于两点，一个是他的重要性高不高，一个是地图的缩放等级大不大。
+序猿想，这就是一个filter函数的问题嘛,输入一个数据，判断是否需要绘制</p>
+<pre><code class="language-javascriptjavascript">function filter(value, zoom){
+  //省略很多行..............
+  return bol;
+}
+</code></pre>
+<p>在地图缩放发生时，遍历所有的数据，判断是否要画，要就建立一个圆。
+。。。。
+在这里，问题又来了。当我们缩放的时候，</p>
+<h4>坑爹的百度地图。</h4>
+<h5>大量点需交互 markerCluster</h5>
+<p>没关系，我自己建一个canvas，canvas上画很多点很方便吧。</p>
+<h5>大量点无需交互 heatmap canvas点图</h5>
+<h3>把握美</h3>
+<p>地图本身就很美，而且美在不同的尺度，几年前经常旅行得时候，我曾彻夜不眠地看google earth，从外太空的视角蓝色的星球，到西藏南部的山脉和水网，再小到呼伦贝尔草原上的一条蛇曲的河流，他们都有着精致的结构，在人类文明所留下的地理痕迹，也充满了难以名状的机理美，
+地球上的数据也很美，手机定位数据点亮大地，展现出一种复杂的分布。</p>
+<h2>60分到90分之路 dmap</h2>
+<p>###数据库</p>
+<h5>geohash</h5>
+<table>
+<thead>
+<tr>
+<th>精度</th>
+<th style="text-align:center">误差(米)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">±2500</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">±630</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">±78</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">±20</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">±2.4</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">±0.61</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">±0.076</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">±0.019</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center">±0.0024</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">±0.00060</td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:center">±0.000074</td>
+</tr>
+</tbody>
+</table>
+<p>参考
+<a href="http://www.thinkgis.cn/topic/5419a086bcea5603e8055ac1">谷歌地图与开放式API</a></p>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = '1_map_practice';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + '1_map_practice' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/map/1_map_practice.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

@@ -1,0 +1,328 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="house_lianjia_communities">
+<Table>
+<Column ss:Width="192"/>
+<Column ss:Width="128"/>
+<Column ss:Width="128"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">site</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">小区数</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">房数</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">户数</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东三林</Data></Cell>
+<Cell><Data ss:Type="String">225</Data></Cell>
+<Cell><Data ss:Type="String">10556</Data></Cell>
+<Cell><Data ss:Type="String">157032</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东金桥</Data></Cell>
+<Cell><Data ss:Type="String">181</Data></Cell>
+<Cell><Data ss:Type="String">9056</Data></Cell>
+<Cell><Data ss:Type="String">123515</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">奉贤南桥</Data></Cell>
+<Cell><Data ss:Type="String">111</Data></Cell>
+<Cell><Data ss:Type="String">9323</Data></Cell>
+<Cell><Data ss:Type="String">107610</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东北蔡</Data></Cell>
+<Cell><Data ss:Type="String">207</Data></Cell>
+<Cell><Data ss:Type="String">7576</Data></Cell>
+<Cell><Data ss:Type="String">104785</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东世博</Data></Cell>
+<Cell><Data ss:Type="String">124</Data></Cell>
+<Cell><Data ss:Type="String">5317</Data></Cell>
+<Cell><Data ss:Type="String">102640</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闵行莘庄</Data></Cell>
+<Cell><Data ss:Type="String">190</Data></Cell>
+<Cell><Data ss:Type="String">8870</Data></Cell>
+<Cell><Data ss:Type="String">98255</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闵行浦江</Data></Cell>
+<Cell><Data ss:Type="String">154</Data></Cell>
+<Cell><Data ss:Type="String">7322</Data></Cell>
+<Cell><Data ss:Type="String">95548</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闵行老闵行</Data></Cell>
+<Cell><Data ss:Type="String">121</Data></Cell>
+<Cell><Data ss:Type="String">8636</Data></Cell>
+<Cell><Data ss:Type="String">93050</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">杨浦中原</Data></Cell>
+<Cell><Data ss:Type="String">143</Data></Cell>
+<Cell><Data ss:Type="String">4557</Data></Cell>
+<Cell><Data ss:Type="String">85095</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山淞宝</Data></Cell>
+<Cell><Data ss:Type="String">135</Data></Cell>
+<Cell><Data ss:Type="String">5247</Data></Cell>
+<Cell><Data ss:Type="String">84984</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闸北彭浦</Data></Cell>
+<Cell><Data ss:Type="String">161</Data></Cell>
+<Cell><Data ss:Type="String">4370</Data></Cell>
+<Cell><Data ss:Type="String">84464</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">松江松江老城</Data></Cell>
+<Cell><Data ss:Type="String">219</Data></Cell>
+<Cell><Data ss:Type="String">7684</Data></Cell>
+<Cell><Data ss:Type="String">81259</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">虹口凉城</Data></Cell>
+<Cell><Data ss:Type="String">211</Data></Cell>
+<Cell><Data ss:Type="String">4425</Data></Cell>
+<Cell><Data ss:Type="String">80463</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">徐汇徐家汇</Data></Cell>
+<Cell><Data ss:Type="String">434</Data></Cell>
+<Cell><Data ss:Type="String">5733</Data></Cell>
+<Cell><Data ss:Type="String">80214</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">长宁中山公园</Data></Cell>
+<Cell><Data ss:Type="String">544</Data></Cell>
+<Cell><Data ss:Type="String">6900</Data></Cell>
+<Cell><Data ss:Type="String">79020</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东川沙</Data></Cell>
+<Cell><Data ss:Type="String">212</Data></Cell>
+<Cell><Data ss:Type="String">6892</Data></Cell>
+<Cell><Data ss:Type="String">79013</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">杨浦周家嘴路</Data></Cell>
+<Cell><Data ss:Type="String">228</Data></Cell>
+<Cell><Data ss:Type="String">4744</Data></Cell>
+<Cell><Data ss:Type="String">77854</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东金杨</Data></Cell>
+<Cell><Data ss:Type="String">118</Data></Cell>
+<Cell><Data ss:Type="String">4467</Data></Cell>
+<Cell><Data ss:Type="String">75199</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">普陀甘泉宜川</Data></Cell>
+<Cell><Data ss:Type="String">120</Data></Cell>
+<Cell><Data ss:Type="String">3113</Data></Cell>
+<Cell><Data ss:Type="String">73976</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">嘉定江桥</Data></Cell>
+<Cell><Data ss:Type="String">87</Data></Cell>
+<Cell><Data ss:Type="String">3950</Data></Cell>
+<Cell><Data ss:Type="String">71822</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东惠南</Data></Cell>
+<Cell><Data ss:Type="String">134</Data></Cell>
+<Cell><Data ss:Type="String">6341</Data></Cell>
+<Cell><Data ss:Type="String">69984</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">杨浦黄兴公园</Data></Cell>
+<Cell><Data ss:Type="String">122</Data></Cell>
+<Cell><Data ss:Type="String">3295</Data></Cell>
+<Cell><Data ss:Type="String">68085</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山张庙</Data></Cell>
+<Cell><Data ss:Type="String">59</Data></Cell>
+<Cell><Data ss:Type="String">3853</Data></Cell>
+<Cell><Data ss:Type="String">63436</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东周浦</Data></Cell>
+<Cell><Data ss:Type="String">112</Data></Cell>
+<Cell><Data ss:Type="String">4656</Data></Cell>
+<Cell><Data ss:Type="String">61788</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">松江泗泾</Data></Cell>
+<Cell><Data ss:Type="String">89</Data></Cell>
+<Cell><Data ss:Type="String">5689</Data></Cell>
+<Cell><Data ss:Type="String">60703</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">松江九亭</Data></Cell>
+<Cell><Data ss:Type="String">100</Data></Cell>
+<Cell><Data ss:Type="String">7515</Data></Cell>
+<Cell><Data ss:Type="String">60234</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闵行古美</Data></Cell>
+<Cell><Data ss:Type="String">86</Data></Cell>
+<Cell><Data ss:Type="String">4354</Data></Cell>
+<Cell><Data ss:Type="String">60109</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闵行春申</Data></Cell>
+<Cell><Data ss:Type="String">74</Data></Cell>
+<Cell><Data ss:Type="String">5291</Data></Cell>
+<Cell><Data ss:Type="String">56063</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山顾村</Data></Cell>
+<Cell><Data ss:Type="String">66</Data></Cell>
+<Cell><Data ss:Type="String">4696</Data></Cell>
+<Cell><Data ss:Type="String">55979</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山杨行</Data></Cell>
+<Cell><Data ss:Type="String">71</Data></Cell>
+<Cell><Data ss:Type="String">4696</Data></Cell>
+<Cell><Data ss:Type="String">54759</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">普陀真如</Data></Cell>
+<Cell><Data ss:Type="String">132</Data></Cell>
+<Cell><Data ss:Type="String">2713</Data></Cell>
+<Cell><Data ss:Type="String">53923</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">普陀桃浦</Data></Cell>
+<Cell><Data ss:Type="String">71</Data></Cell>
+<Cell><Data ss:Type="String">3566</Data></Cell>
+<Cell><Data ss:Type="String">52997</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">松江松江新城</Data></Cell>
+<Cell><Data ss:Type="String">121</Data></Cell>
+<Cell><Data ss:Type="String">12135</Data></Cell>
+<Cell><Data ss:Type="String">52992</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闸北大宁</Data></Cell>
+<Cell><Data ss:Type="String">127</Data></Cell>
+<Cell><Data ss:Type="String">2449</Data></Cell>
+<Cell><Data ss:Type="String">51761</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">杨浦五角场</Data></Cell>
+<Cell><Data ss:Type="String">166</Data></Cell>
+<Cell><Data ss:Type="String">2866</Data></Cell>
+<Cell><Data ss:Type="String">51180</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">虹口曲阳</Data></Cell>
+<Cell><Data ss:Type="String">150</Data></Cell>
+<Cell><Data ss:Type="String">4207</Data></Cell>
+<Cell><Data ss:Type="String">50261</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山上大</Data></Cell>
+<Cell><Data ss:Type="String">48</Data></Cell>
+<Cell><Data ss:Type="String">5834</Data></Cell>
+<Cell><Data ss:Type="String">50223</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝山大华</Data></Cell>
+<Cell><Data ss:Type="String">49</Data></Cell>
+<Cell><Data ss:Type="String">5212</Data></Cell>
+<Cell><Data ss:Type="String">49761</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">嘉定南翔</Data></Cell>
+<Cell><Data ss:Type="String">101</Data></Cell>
+<Cell><Data ss:Type="String">4619</Data></Cell>
+<Cell><Data ss:Type="String">49147</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">长宁北新泾</Data></Cell>
+<Cell><Data ss:Type="String">76</Data></Cell>
+<Cell><Data ss:Type="String">2829</Data></Cell>
+<Cell><Data ss:Type="String">48637</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东陆家嘴</Data></Cell>
+<Cell><Data ss:Type="String">151</Data></Cell>
+<Cell><Data ss:Type="String">1583</Data></Cell>
+<Cell><Data ss:Type="String">48442</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东康桥</Data></Cell>
+<Cell><Data ss:Type="String">70</Data></Cell>
+<Cell><Data ss:Type="String">6030</Data></Cell>
+<Cell><Data ss:Type="String">48101</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">嘉定安亭</Data></Cell>
+<Cell><Data ss:Type="String">112</Data></Cell>
+<Cell><Data ss:Type="String">5152</Data></Cell>
+<Cell><Data ss:Type="String">47788</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东曹路</Data></Cell>
+<Cell><Data ss:Type="String">94</Data></Cell>
+<Cell><Data ss:Type="String">2510</Data></Cell>
+<Cell><Data ss:Type="String">47254</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">徐汇康健</Data></Cell>
+<Cell><Data ss:Type="String">116</Data></Cell>
+<Cell><Data ss:Type="String">2876</Data></Cell>
+<Cell><Data ss:Type="String">46930</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">嘉定丰庄</Data></Cell>
+<Cell><Data ss:Type="String">65</Data></Cell>
+<Cell><Data ss:Type="String">2413</Data></Cell>
+<Cell><Data ss:Type="String">46605</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">青浦夏阳</Data></Cell>
+<Cell><Data ss:Type="String">67</Data></Cell>
+<Cell><Data ss:Type="String">3738</Data></Cell>
+<Cell><Data ss:Type="String">45439</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">闸北西藏北路</Data></Cell>
+<Cell><Data ss:Type="String">273</Data></Cell>
+<Cell><Data ss:Type="String">3760</Data></Cell>
+<Cell><Data ss:Type="String">44651</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东张江</Data></Cell>
+<Cell><Data ss:Type="String">152</Data></Cell>
+<Cell><Data ss:Type="String">5914</Data></Cell>
+<Cell><Data ss:Type="String">44102</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东外高桥</Data></Cell>
+<Cell><Data ss:Type="String">89</Data></Cell>
+<Cell><Data ss:Type="String">3019</Data></Cell>
+<Cell><Data ss:Type="String">43841</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

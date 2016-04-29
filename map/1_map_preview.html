@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>1_map_preview</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h1>地图</h1>
+<h2>前言</h2>
+<p>上下方圆曰宇，往古来今曰宙，说大了宇宙就是时间和空间。说到底，事物（数据）都有时空的属性。为了展现事物和地球上位置相关的信息，我们发明了地图，用来指明地理要素的位置关系。
+大部分人理解的地图，可能就是高德地图的样子，黄色的陆地，蓝色的河，可以缩放，可以定位和导航，功能就是用来指路的。还有卫星地图，一堆卫星航拍的照片一起叠加。
+但事实上，广义上的地图要比我们日常看到的要更多，比如地理相关的数据可视化，将要素叠加在地图上，我们应该看过许多酷炫的效果，当然也可以很实用，打开嘀嘀打车，屏上就是实时交通数据的可视化</p>
+<p>山脉河流，阡陌交通，目之所及，某种意义上说，都是地图的要素。
+如何抽象、展示和实现地图？</p>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = '1_map_preview';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + '1_map_preview' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/map/1_map_preview.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

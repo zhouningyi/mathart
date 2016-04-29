@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>1_map_wms</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h2>瓦片系统</h2>
+<p>####瓦片底图
+地理信息量往往很大，计算都传到本地，一起渲染也注定死机。但我们很可能只需看到视窗范围内的数据。最普遍的方法是把所有的图渲染成图片，存在服务器，根据屏幕视窗的大小，动态地判断需要哪几张图片，然后把那几张我们需要查看的图片下载下来。</p>
+<p>为了使瓦片的数量不要太多，我们限定了缩放的等级，通常为0-18级，每增加一级，瓦片的数量变成之前的4倍。加一级，瓦片多很多，但我们的视窗内的瓦片数量基本不会变。</p>
+<p><img src="./img/zoom.jpg" alt="image"></p>
+<table>
+<thead>
+<tr>
+<th>缩放层级（zoom）</th>
+<th style="text-align:center">瓦片（tiles）的数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td>i</td>
+<td style="text-align:center">4^i</td>
+</tr>
+<tr>
+<td>18</td>
+<td style="text-align:center">68,719,476,736</td>
+</tr>
+</tbody>
+</table>
+<p>这就是所谓瓦片地图服务（TMS,tile map service）, 我们用的百度高德地图莫不如此。</p>
+<h5>图层叠加模型</h5>
+<p>行政区划、山体水系、道路房屋、商圈分布、车辆轨迹，地图的要素好多啊，每次我们只是看若干种类型，怎么组织这些数据？
+大多地图工具都以&quot;层&quot;管理这些地理要素，如GIS。比如我们在地图上画1000个人的分布，往往分两层，底图底图层（地理数据）和包含1000个人的点的层。
+简单地理解层，就是我们把3d的地理要素拍平（或者说投影project）按照顺序叠在平面上。
+层有很多组织方式。比如，业务的角度，我们将一张地图分成 基底、道路、标注，而绘制的角度，我们分成瓦片层、svg层、canvas层等。</p>
+<p>#####贴图
+普通地图为展示地理数据本身而生，可视化地图为展示地图上的数据为生。</p>
+<h2>矢量图层（svg）&amp; 地理数据</h2>
+<h5>数据格式的表示与转换</h5>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = '1_map_wms';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + '1_map_wms' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/map/1_map_wms.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

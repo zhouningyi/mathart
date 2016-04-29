@@ -1,0 +1,51 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="house_lianjia_details">
+<Table>
+<Column ss:Width="64"/>
+<Column ss:Width="192"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">price_per_square</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">decoration</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">c</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">55378.9799912049</Data></Cell>
+<Cell><Data ss:Type="String">豪装</Data></Cell>
+<Cell><Data ss:Type="String">9096</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">41158.9676137179</Data></Cell>
+<Cell><Data ss:Type="String">精装</Data></Cell>
+<Cell><Data ss:Type="String">69690</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">37779.4098005204</Data></Cell>
+<Cell><Data ss:Type="String">中装</Data></Cell>
+<Cell><Data ss:Type="String">25366</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">36534.4950790169</Data></Cell>
+<Cell><Data ss:Type="String">简装</Data></Cell>
+<Cell><Data ss:Type="String">17781</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">28918.1871778509</Data></Cell>
+<Cell><Data ss:Type="String">毛坯</Data></Cell>
+<Cell><Data ss:Type="String">20371</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

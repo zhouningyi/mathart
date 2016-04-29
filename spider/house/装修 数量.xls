@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40"
+ xmlns:u1="http://www.w3.org/QObject::tr/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>ningyi zhou</LastAuthor>
+  <LastSaved>2016-03-18T15:27:36Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>6240</WindowHeight>
+  <WindowWidth>10000</WindowWidth>
+  <WindowTopX>5880</WindowTopX>
+  <WindowTopY>1060</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="宋体" ss:Bold="1"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="house_lianjia_details">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="6" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+   <Column ss:Width="192"/>
+   <Column ss:Width="128"/>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">main</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">count</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">豪装</Data></Cell>
+    <Cell><Data ss:Type="String">9439</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">简装</Data></Cell>
+    <Cell><Data ss:Type="String">18591</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">毛坯</Data></Cell>
+    <Cell><Data ss:Type="String">21782</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">中装</Data></Cell>
+    <Cell><Data ss:Type="String">26321</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">精装</Data></Cell>
+    <Cell><Data ss:Type="String">72906</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+     <RangeSelection>R2C2:R6C2</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

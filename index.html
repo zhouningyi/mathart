@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>前言</title>
+    <script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var thishref = window.location.href;
+   if (ua.indexOf('micromessenger') !== -1 && (thishref.indexOf('code') === -1)) {//微信中打开 且短网址 如不是从长网址回退
+    thishref = window.encodeURI(thishref);
+   // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri='+thishref+'?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+}
+    </script>
+		<link rel="stylesheet" href="http://7i7ifh.com1.z0.glb.clouddn.com/github-markdown.css">
+    <link rel="stylesheet" href=" http://cdn.bootcss.com/highlight.js/8.6/styles/github-gist.min.css">
+		<style>
+			body {
+				min-width: 200px;
+				max-width: 790px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<h1>美学的数学世界</h1>
+<!-- 这是个大的有点装逼的标题，不过就这样吧，just do it，码字的同时也是一种成长。 -->
+<!--我在毕业的6年里做过些看起来不靠谱的经历
+，用程序画过景观图，做过建筑参数化设计，玩过分形办过画展，用processing写过数字艺术小demo，做过一个java的小游戏，现在在阿里巴巴的数据可视化团队工作。-->
+<!-- 这里的内容很杂，但基本是通过代码去实现酷炫的设计和艺术效果 -->
+<!--，我相信，这也是当代艺术和设计领域最激动人心的方向之一。-->
+<!-- 案例都有代码实现(html+css+js)，web相关的技术社区庞大、受众广泛、标准清晰，也易于在pc、pad、手机等设备展示和传播。 不过，代码不是本文关注的核心，技术日新月异，原理大同小异，我希望为读者呈现一些有趣、有用的原理和简单的代码实现。 -->
+<!-- 用数学和代码展现美，这里依旧是一片激动人心的荒原，come up！ -->
+<!--我曾是一个景观设计师，为一个建筑论坛的[帖子](http://www.jtben.com/document/846619) 激动不已，跑到北京做了参数化设计。
+我希望用文字和代码阐述观点，作为前端开发工程师，我选用的是HTML + CSS + JAVASCRIPT。 但语言不重要，我会着重阐述观点和思路，-->
+<h2>物理学</h2>
+<h4><a href="./particle/1_particle_physic.html">粒子系统</a></h4>
+<h2>颜色</h2>
+<h4><a href="./color/1_color_basic.html">色彩基础</a></h4>
+<h4><a href="./color/2_color_palette.html">色彩组合</a></h4>
+<h2>数据可视化</h2>
+<h2>地图</h2>
+<h4><a href="./map/1_map_preview.html">前言</a></h4>
+<h4><a href="./map/1_map_projection.html">投影</a></h4>
+<h4><a href="./map/1_map_wms.html">瓦片系统</a></h4>
+<h4><a href="./map/1_map_practice.html">实践: 画一个点图</a></h4>
+<h2>数据分析</h2>
+<h4><a href="./spider/mima.html">密码漫游记</a></h4>
+<h4><a href="./spider/fangjia.html">房价分析</a></h4>
+<h1>记叙</h1>
+<h4><a href="./records/7_years.html">7年.设计师的码农路</a></h4>
+<h1>诗</h1>
+<h4><a href="./poems/2011_08_%E8%A5%BF%E7%BA%BF%E4%B8%AD%E5%9B%BD.html">西线中国 | 2011</a></h4>
+<h4><a href="./poems/2011_08_%E8%A5%BF%E7%BA%BF%E4%B8%AD%E5%9B%BD_2.html">西线中国2 | 2011</a></h4>
+<h4><a href="./poems/2015_08_%E5%87%BA%E5%8F%91.html">出发 | 2015</a></h4>
+<h4><a href="./poems/2015_08_%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90.html">写在乌鲁木齐的大街上 | 2015</a></h4>
+
+		</article>
+	</body>
+	<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+	<script type="text/javascript">
+
+  hljs.initHighlightingOnLoad();
+
+  var jsTicketUrl = encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+  $.getJSON('http://hotu.co/hotu-api/api/weixin/sign?url=' + jsTicketUrl,
+    function(data, status) {
+      data = data || {};
+      var config = data.config;
+      config.debug = false;
+      wx.config(config);
+      genShare();
+    });
+
+function genShare() {
+  wx.ready(function() {
+    var title = '前言';
+    var picUrl = 'http://7i7ifh.com1.z0.glb.clouddn.com/8f2281a623e8a03.jpg';
+    var desc = '美的数学世界|' + '前言' + '\n设计师的代码修炼之路';
+    var shareUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05125e8c1635642f&redirect_uri=http://hotu.co/blog/index.html?response_type=code&scope=snsapi_base&state=22&connect_redirect=1&from=timeline&isappinstalled=0#wechat_redirect';
+    var shareObj = {
+      title: title,
+      link: shareUrl,
+      imgUrl: picUrl,
+      desc: desc,
+      success: function() {
+      },
+      cancel: function() {
+      }
+    };
+
+    wx.onMenuShareTimeline(shareObj);
+    wx.onMenuShareAppMessage(shareObj);
+  });
+};
+	</script>
+</html>

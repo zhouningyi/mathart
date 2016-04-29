@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title id="title">粒子基础</title>
+  <style>
+  #canvas,#container,html,body {
+     padding: 0;
+     margin: 0;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     text-align: center;
+      }
+ </style>
+</head>
+</body>
+<div id="container"></div>
+<script type="text/javascript" src="./particle.js"></script>
+<script>
+
+//创建画布，每个案例都差不多
+var container = document.getElementById('container');//取得放置canvas画板的容器
+var canvas = document.createElement('canvas');//创建canvas画布
+var width = canvas.width = container.offsetWidth;//把容器的宽度赋予画布
+var height = canvas.height = container.offsetHeight;//把容器的高度赋予画布
+container.appendChild(canvas);//把画布放入容器
+var ctx = canvas.getContext('2d');
+
+var particleA, particleB, particleC;
+function init(){
+  particleA = new Particle(ctx, width * Math.random(), height * Math.random());
+  particleB = new Particle(ctx, width * Math.random(), height * Math.random());
+  particleC = new Particle(ctx, width * Math.random(), height * Math.random());
+}
+
+function getForce(pt1, pt2){ //计算天体pt2对pt1的吸引。
+  var dx = pt2.x - pt1.x;//计算2个点x方向上的距离
+  var dy = pt2.y - pt1.y;//计算2个点y方向上的距离
+  var distance2 = dx * dx + dy * dy; //计算距离的平方
+  var distance = Math.sqrt(distance2);//两点之间的距离
+  if(distance === 0) return {x:0,y:0};//如果不幸运动到距离为0，力为无穷大，避免这点吧。
+  var f =  pt1.m * pt2.m / distance2;
+  return {
+    x: f * dx / distance, //力在x方向上的分量
+    y: f * dy / distance  //力在y方向上的分量
+  };
+}
+
+function addForce(v1, v2){//把两个力加起来
+  return {
+    x: v1.x + v2.x,
+    y: v1.y + v2.y
+  };
+}
+
+function loop(){
+  //计算受力
+  var forcePA = addForce(getForce(particleA, particleB), getForce(particleA, particleC));
+  var forcePB = addForce(getForce(particleB, particleA), getForce(particleB, particleC));
+  var forcePC = addForce(getForce(particleC, particleB), getForce(particleC, particleA));
+
+  //更新位置
+  particleA.update(forcePA);
+  particleA.render();
+
+  particleC.update(forcePC);
+  particleC.render();
+
+  particleB.update(forcePB);
+  particleB.render();
+  
+  //校验，有没有算错
+  var cx = (particleA.m * particleA.x + particleB.m * particleB.x + particleC.m * particleC.x) / (particleA.m * particleB.m + particleC.m);
+  var cy = (particleA.m * particleA.y + particleB.m * particleB.y + particleC.m * particleC.y) / (particleA.m * particleB.m + particleC.m);
+  console.log(cx,cy);//打印出来，看看变了位置没有
+
+  //执行循环
+  window.requestAnimationFrame(loop);
+}
+
+init();
+loop();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="table">
+<Table>
+<Column ss:Width="64"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">t</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">sum</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">0</Data></Cell>
+<Cell><Data ss:Type="String">130353</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1</Data></Cell>
+<Cell><Data ss:Type="String">110468</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2</Data></Cell>
+<Cell><Data ss:Type="String">95618</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">3</Data></Cell>
+<Cell><Data ss:Type="String">81654</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">4</Data></Cell>
+<Cell><Data ss:Type="String">77769</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">5</Data></Cell>
+<Cell><Data ss:Type="String">86750</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">6</Data></Cell>
+<Cell><Data ss:Type="String">106604</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">7</Data></Cell>
+<Cell><Data ss:Type="String">127891</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">8</Data></Cell>
+<Cell><Data ss:Type="String">138014</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">9</Data></Cell>
+<Cell><Data ss:Type="String">138402</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">10</Data></Cell>
+<Cell><Data ss:Type="String">140041</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">11</Data></Cell>
+<Cell><Data ss:Type="String">135936</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">12</Data></Cell>
+<Cell><Data ss:Type="String">135134</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">13</Data></Cell>
+<Cell><Data ss:Type="String">131943</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">14</Data></Cell>
+<Cell><Data ss:Type="String">128699</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">15</Data></Cell>
+<Cell><Data ss:Type="String">131673</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">16</Data></Cell>
+<Cell><Data ss:Type="String">127855</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17</Data></Cell>
+<Cell><Data ss:Type="String">134432</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">18</Data></Cell>
+<Cell><Data ss:Type="String">132625</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">19</Data></Cell>
+<Cell><Data ss:Type="String">151032</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">20</Data></Cell>
+<Cell><Data ss:Type="String">155405</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">21</Data></Cell>
+<Cell><Data ss:Type="String">168332</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">22</Data></Cell>
+<Cell><Data ss:Type="String">159242</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">23</Data></Cell>
+<Cell><Data ss:Type="String">152119</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

@@ -1,0 +1,101 @@
+
+<html><head>
+<script id="shader-vs" type="x-shader/x-vertex"> 
+  attribute vec3 vPos;
+void main(void) {
+   gl_Position = vec4(vPos, 1.);
+}
+</script> 
+<script id="shader-fs" type="x-shader/x-fragment"> 
+#ifdef GL_ES
+precision highp float;
+#endif
+  uniform float scale;
+void main(void) {
+   float Cr = (gl_FragCoord.x - 300.) / scale + .407476;
+   float Ci = (gl_FragCoord.y - 300.) / scale + .234204;
+   float R = 0., I = 0.,  R2 = R*R, I2 = I*I;
+   int mm;
+   for(int m = 0; m < 125; m++){
+     I=(R+R)*I+Ci;  R=R2-I2+Cr;  R2=R*R;  I2=I*I;    mm = m;
+     if( R2 + I2 > 4. ) break;
+   }
+   if (mm == 124) gl_FragColor = vec4(0., 0., 0., 1.);
+   else{
+    float a = mod(float(mm), 60.) / 20.;
+    gl_FragColor = vec4( max(0., abs(a - 1.5) - .5),
+      max(0., 1. - abs(a - 1.)), max(0., 1. - abs(a - 2.)), 1.);
+   }
+}
+</script> 
+ 
+<script type="text/javascript"> 
+var gl;
+var scaleLoc, scale = 500, zoom = 1.01, frames = 0, time;
+
+function getShader ( gl, id ){
+   var shaderScript = document.getElementById ( id );
+   var str = "";
+   var k = shaderScript.firstChild;
+   while ( k ){
+     if ( k.nodeType == 3 ) str += k.textContent;
+     k = k.nextSibling;
+   }
+   var shader;
+   if ( shaderScript.type == "x-shader/x-fragment" )
+           shader = gl.createShader ( gl.FRAGMENT_SHADER );
+   else if ( shaderScript.type == "x-shader/x-vertex" )
+           shader = gl.createShader(gl.VERTEX_SHADER);
+   else return null;
+   gl.shaderSource(shader, str);
+   gl.compileShader(shader);
+   if (gl.getShaderParameter(shader, gl.COMPILE_STATUS) == 0)
+      alert(gl.getShaderInfoLog(shader));
+   return shader;
+}
+
+function webGLStart() {
+  var body = document.getElementsByTagName("body")[0];
+  var canvas = document.createElement('canvas');
+  canvas.width = body.clientWidth;
+  canvas.height = body.clientHeight;
+  body.appendChild(canvas);
+   try { gl = canvas.getContext("experimental-webgl");
+   } catch(e) {}
+   if ( !gl ) {alert("Your browser does not support WebGL"); return;}
+
+   var prog  = gl.createProgram();
+   gl.attachShader(prog, getShader( gl, "shader-vs" ));
+   gl.attachShader(prog, getShader( gl, "shader-fs" ));
+   gl.linkProgram(prog);
+   gl.useProgram(prog);
+
+   var posAtrLoc = gl.getAttribLocation(prog, "vPos");
+   gl.enableVertexAttribArray( posAtrLoc );
+   var posBuffer = gl.createBuffer();
+   gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+   var vertices = new Float32Array([
+     -1,-1, 0,   1,-1, 0,   1, 1, 0,  -1, 1, 0 ]);
+   gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+   gl.vertexAttribPointer(posAtrLoc, 3, gl.FLOAT, false, 0, 0);
+   scaleLoc = gl.getUniformLocation(prog,"scale")
+  draw();
+}
+
+function draw() {
+   scale *= zoom;  frames++;
+   gl.uniform1f( scaleLoc, scale );
+   gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
+   gl.flush ();
+   setTimeout(draw, 10);
+}
+function reset() {
+  scale = 500;
+}
+function setZoom(v) {
+  zoom = v.valueOf();
+}
+</script> 
+</head>
+<body onload="webGLStart();" style="width:100%;height:100%;top:0;left:0;padding:0;margin:0;"> 
+</body></html>

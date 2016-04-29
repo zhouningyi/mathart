@@ -1,0 +1,468 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="house_lianjia_communities">
+<Table>
+<Column ss:Width="64"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">community_complete_year</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">sum</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number"></Data></Cell>
+<Cell><Data ss:Type="String">132440</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2017</Data></Cell>
+<Cell><Data ss:Type="String">316</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2016</Data></Cell>
+<Cell><Data ss:Type="String">2327</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2015</Data></Cell>
+<Cell><Data ss:Type="String">28296</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2014</Data></Cell>
+<Cell><Data ss:Type="String">114432</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2013</Data></Cell>
+<Cell><Data ss:Type="String">156166</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2012</Data></Cell>
+<Cell><Data ss:Type="String">177406</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2011</Data></Cell>
+<Cell><Data ss:Type="String">197774</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2010</Data></Cell>
+<Cell><Data ss:Type="String">161671</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2009</Data></Cell>
+<Cell><Data ss:Type="String">169954</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2008</Data></Cell>
+<Cell><Data ss:Type="String">245232</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2007</Data></Cell>
+<Cell><Data ss:Type="String">257324</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2006</Data></Cell>
+<Cell><Data ss:Type="String">322654</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2005</Data></Cell>
+<Cell><Data ss:Type="String">312220</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2004</Data></Cell>
+<Cell><Data ss:Type="String">254618</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2003</Data></Cell>
+<Cell><Data ss:Type="String">205754</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2002</Data></Cell>
+<Cell><Data ss:Type="String">190714</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2001</Data></Cell>
+<Cell><Data ss:Type="String">146631</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">2000</Data></Cell>
+<Cell><Data ss:Type="String">158138</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1999</Data></Cell>
+<Cell><Data ss:Type="String">158934</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1998</Data></Cell>
+<Cell><Data ss:Type="String">176553</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1997</Data></Cell>
+<Cell><Data ss:Type="String">210560</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1996</Data></Cell>
+<Cell><Data ss:Type="String">210084</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1995</Data></Cell>
+<Cell><Data ss:Type="String">301072</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1994</Data></Cell>
+<Cell><Data ss:Type="String">442827</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1993</Data></Cell>
+<Cell><Data ss:Type="String">236385</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1992</Data></Cell>
+<Cell><Data ss:Type="String">80364</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1991</Data></Cell>
+<Cell><Data ss:Type="String">88590</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1990</Data></Cell>
+<Cell><Data ss:Type="String">125398</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1989</Data></Cell>
+<Cell><Data ss:Type="String">97434</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1988</Data></Cell>
+<Cell><Data ss:Type="String">87590</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1987</Data></Cell>
+<Cell><Data ss:Type="String">127272</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1986</Data></Cell>
+<Cell><Data ss:Type="String">87349</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1985</Data></Cell>
+<Cell><Data ss:Type="String">71101</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1984</Data></Cell>
+<Cell><Data ss:Type="String">102669</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1983</Data></Cell>
+<Cell><Data ss:Type="String">88032</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1982</Data></Cell>
+<Cell><Data ss:Type="String">80739</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1981</Data></Cell>
+<Cell><Data ss:Type="String">67504</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1980</Data></Cell>
+<Cell><Data ss:Type="String">89744</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1979</Data></Cell>
+<Cell><Data ss:Type="String">50556</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1978</Data></Cell>
+<Cell><Data ss:Type="String">48411</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1977</Data></Cell>
+<Cell><Data ss:Type="String">28046</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1976</Data></Cell>
+<Cell><Data ss:Type="String">23748</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1975</Data></Cell>
+<Cell><Data ss:Type="String">26926</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1974</Data></Cell>
+<Cell><Data ss:Type="String">19374</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1973</Data></Cell>
+<Cell><Data ss:Type="String">15395</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1972</Data></Cell>
+<Cell><Data ss:Type="String">6447</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1971</Data></Cell>
+<Cell><Data ss:Type="String">568</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1970</Data></Cell>
+<Cell><Data ss:Type="String">6347</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1969</Data></Cell>
+<Cell><Data ss:Type="String">1515</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1968</Data></Cell>
+<Cell><Data ss:Type="String">3446</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1967</Data></Cell>
+<Cell><Data ss:Type="String">7474</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1966</Data></Cell>
+<Cell><Data ss:Type="String">8236</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1965</Data></Cell>
+<Cell><Data ss:Type="String">5104</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1964</Data></Cell>
+<Cell><Data ss:Type="String">6670</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1963</Data></Cell>
+<Cell><Data ss:Type="String">4308</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1962</Data></Cell>
+<Cell><Data ss:Type="String">4920</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1961</Data></Cell>
+<Cell><Data ss:Type="String">4888</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1960</Data></Cell>
+<Cell><Data ss:Type="String">14517</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1959</Data></Cell>
+<Cell><Data ss:Type="String">21408</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1958</Data></Cell>
+<Cell><Data ss:Type="String">52565</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1957</Data></Cell>
+<Cell><Data ss:Type="String">24133</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1956</Data></Cell>
+<Cell><Data ss:Type="String">43300</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1955</Data></Cell>
+<Cell><Data ss:Type="String">3767</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1954</Data></Cell>
+<Cell><Data ss:Type="String">23738</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1953</Data></Cell>
+<Cell><Data ss:Type="String">26816</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1952</Data></Cell>
+<Cell><Data ss:Type="String">8837</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1951</Data></Cell>
+<Cell><Data ss:Type="String">1308</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1950</Data></Cell>
+<Cell><Data ss:Type="String">7769</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1949</Data></Cell>
+<Cell><Data ss:Type="String">2372</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1948</Data></Cell>
+<Cell><Data ss:Type="String">1268</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1947</Data></Cell>
+<Cell><Data ss:Type="String">161</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1946</Data></Cell>
+<Cell><Data ss:Type="String">652</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1945</Data></Cell>
+<Cell><Data ss:Type="String">233</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1944</Data></Cell>
+<Cell><Data ss:Type="String">451</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1943</Data></Cell>
+<Cell><Data ss:Type="String">764</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1942</Data></Cell>
+<Cell><Data ss:Type="String">19</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1941</Data></Cell>
+<Cell><Data ss:Type="String">15</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1940</Data></Cell>
+<Cell><Data ss:Type="String">5463</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1939</Data></Cell>
+<Cell><Data ss:Type="String">236</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1938</Data></Cell>
+<Cell><Data ss:Type="String">112</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1937</Data></Cell>
+<Cell><Data ss:Type="String">1246</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1936</Data></Cell>
+<Cell><Data ss:Type="String">3510</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1935</Data></Cell>
+<Cell><Data ss:Type="String">376</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1934</Data></Cell>
+<Cell><Data ss:Type="String">290</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1933</Data></Cell>
+<Cell><Data ss:Type="String">747</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1932</Data></Cell>
+<Cell><Data ss:Type="String">157</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1931</Data></Cell>
+<Cell><Data ss:Type="String">359</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1930</Data></Cell>
+<Cell><Data ss:Type="String">10838</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1929</Data></Cell>
+<Cell><Data ss:Type="String">3374</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1928</Data></Cell>
+<Cell><Data ss:Type="String">499</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1927</Data></Cell>
+<Cell><Data ss:Type="String">500</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1926</Data></Cell>
+<Cell><Data ss:Type="String">333</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1925</Data></Cell>
+<Cell><Data ss:Type="String">150</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1924</Data></Cell>
+<Cell><Data ss:Type="String">954</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1923</Data></Cell>
+<Cell><Data ss:Type="String">748</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1922</Data></Cell>
+<Cell><Data ss:Type="String">39</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1921</Data></Cell>
+<Cell><Data ss:Type="String">99</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1920</Data></Cell>
+<Cell><Data ss:Type="String">14431</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1919</Data></Cell>
+<Cell><Data ss:Type="String">316</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1918</Data></Cell>
+<Cell><Data ss:Type="String">54</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1915</Data></Cell>
+<Cell><Data ss:Type="String">17</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1914</Data></Cell>
+<Cell><Data ss:Type="String">7</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1912</Data></Cell>
+<Cell><Data ss:Type="String">571</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1911</Data></Cell>
+<Cell><Data ss:Type="String">3480</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1910</Data></Cell>
+<Cell><Data ss:Type="String">8714</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1909</Data></Cell>
+<Cell><Data ss:Type="String">41</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1908</Data></Cell>
+<Cell><Data ss:Type="String">16</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1905</Data></Cell>
+<Cell><Data ss:Type="String">2</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1901</Data></Cell>
+<Cell><Data ss:Type="String">58</Data></Cell>
+</Row>
+<Row>
+<Cell ss:StyleID="number"><Data ss:Type="Number">1900</Data></Cell>
+<Cell><Data ss:Type="String">1755</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

@@ -4,7 +4,7 @@ function Particle(ctx, x, y) {
   this.y = y;
   this.vx = Math.random() - 0.5; //x速度随机
   this.vy = Math.random() - 0.5; //y速度随机
-  this.radius = Math.random() * 150;
+  this.radius = Math.random() * 120;
   this.color = 'rgba(0,0,0,0.5)';
 }
 

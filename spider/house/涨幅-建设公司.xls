@@ -1,0 +1,131 @@
+<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/QObject::tr/REC-html40">
+<ss:Styles>
+<ss:Style ss:ID="bold">
+<ss:Font ss:Bold="1"/>
+</ss:Style>
+<ss:Style ss:ID="number">
+<ss:Alignment ss:Horizontal="Right"/>
+</ss:Style>
+</ss:Styles>
+<Worksheet ss:Name="table">
+<Table>
+<Column ss:Width="192"/>
+<Column ss:Width="64"/>
+<Column ss:Width="128"/>
+<Row>
+<Cell ss:StyleID="bold"><Data ss:Type="String">develop_company</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">percent</Data></Cell>
+<Cell ss:StyleID="bold"><Data ss:Type="String">count</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">宝钢集团有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">29.8925319140746</Data></Cell>
+<Cell><Data ss:Type="String">25</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海宝钢房地产经营开发公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">25.9841721217493</Data></Cell>
+<Cell><Data ss:Type="String">11</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">大华集团</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">21.0088667516758</Data></Cell>
+<Cell><Data ss:Type="String">15</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海中星（集团）有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">19.9257248598252</Data></Cell>
+<Cell><Data ss:Type="String">45</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海万科房地产有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">19.6687271841162</Data></Cell>
+<Cell><Data ss:Type="String">9</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海卫百辛房地产经纪有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">18.968900743886</Data></Cell>
+<Cell><Data ss:Type="String">8</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海新长宁（集团）有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.9099580857002</Data></Cell>
+<Cell><Data ss:Type="String">32</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海市绿地集团置业有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.8864817153617</Data></Cell>
+<Cell><Data ss:Type="String">9</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海建工集团</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.8442522151651</Data></Cell>
+<Cell><Data ss:Type="String">116</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海顾村房地产开发(集团)有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.6047926439854</Data></Cell>
+<Cell><Data ss:Type="String">9</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海祁连房地产开发总公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.3340516005485</Data></Cell>
+<Cell><Data ss:Type="String">10</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海城投置业管理有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.220785186297</Data></Cell>
+<Cell><Data ss:Type="String">8</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">浦东房地产开发公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">17.0921478009118</Data></Cell>
+<Cell><Data ss:Type="String">9</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海北蔡房地产发展有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">16.4900897862786</Data></Cell>
+<Cell><Data ss:Type="String">8</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海闵行房地产发展有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">16.2613013849009</Data></Cell>
+<Cell><Data ss:Type="String">13</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海由由房地产开发有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">15.2092567456961</Data></Cell>
+<Cell><Data ss:Type="String">11</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">绿地集团</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">14.3748060801767</Data></Cell>
+<Cell><Data ss:Type="String">37</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">颛元置业有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">14.3096737888929</Data></Cell>
+<Cell><Data ss:Type="String">9</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上南开发集团</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">13.989898410559</Data></Cell>
+<Cell><Data ss:Type="String">14</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海徐汇房产经营有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">13.7793087425257</Data></Cell>
+<Cell><Data ss:Type="String">12</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">上海三林房地产开发经营有限公司</Data></Cell>
+<Cell ss:StyleID="number"><Data ss:Type="Number">12.8984577900694</Data></Cell>
+<Cell><Data ss:Type="String">12</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>
